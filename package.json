@@ -1,0 +1,15 @@
+{
+    "name": "forgy-platform",
+    "version": "1.0.0",
+    "description": "Plataforma Forgy - App de Ejercicios",
+    "scripts": {
+        "dev": "concurrently -n \"API,MOBILE,ADMIN\" -c \"yellow,cyan,magenta\" \"npm run dev:api\" \"npm run dev:mobile\" \"npm run dev:admin\"",
+        "dev:api": "cd backend-api && npx ts-node src/index.ts",
+        "dev:mobile": "cd mobile-app && ionic serve",
+        "dev:admin": "cd admin-web && npm run dev",
+        "install:all": "npm install && cd backend-api && npm install && cd ../mobile-app && npm install && cd ../admin-web && npm install"
+    },
+    "devDependencies": {
+        "concurrently": "8.2.2"
+    }
+}
