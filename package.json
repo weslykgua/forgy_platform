@@ -7,7 +7,12 @@
         "dev:api": "cd forgy_backend_api && npx ts-node src/index.ts",
         "dev:mobile": "cd forgy_mobile_app && ionic serve",
         "dev:admin": "cd forgy_admin_web && npm run dev",
-        "install:all": "npm install && cd forgy_backend_api && npm install && cd ../forgy_mobile_app && npm install && cd ../forgy_admin_web && npm install"
+        
+        "clean": "npx rimraf node_modules package-lock.json forgy_backend_api/node_modules forgy_backend_api/package-lock.json forgy_mobile_app/node_modules forgy_mobile_app/package-lock.json forgy_admin_web/node_modules forgy_admin_web/package-lock.json",
+        
+        "install:all": "npm install && concurrently \"cd forgy_backend_api && npm install\" \"cd forgy_mobile_app && npm install\" \"cd forgy_admin_web && npm install\"",
+        
+        "reset": "npm run clean && npm run install:all"
     },
     "devDependencies": {
         "concurrently": "8.2.2"
