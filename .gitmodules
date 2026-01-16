@@ -1,0 +1,9 @@
+[submodule "forgy_mobile_app"]
+	path = forgy_mobile_app
+	url = git@github.com:weslykgua/forgy_mobile_app.git
+[submodule "forgy_backend_api"]
+	path = forgy_backend_api
+	url = git@github.com:weslykgua/forgy_backend_api.git
+[submodule "forgy_admin_web"]
+	path = forgy_admin_web
+	url = git@github.com:weslykgua/forgy_admin_web.git
