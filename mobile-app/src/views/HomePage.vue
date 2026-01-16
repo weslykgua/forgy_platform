@@ -640,17 +640,8 @@ onIonViewWillEnter(() => {
 </script>
 
 <style scoped>
-
-
-.ring-title{
-    background-color: #052e5a;
-    border-radius: 30px;
-    padding: 0.5rem;
-   
-}
-
 .home-content {
-    --background: #ffffff;
+    --background: #f8f9fa;
 }
 
 .header-brand {
@@ -672,7 +663,7 @@ onIonViewWillEnter(() => {
 .hero-section {
     position: relative;
     padding: 24px 16px;
-    background: linear-gradient(135deg, var(--ion-color-primary) 0%, hsl(241, 99%, 28%) 100%);
+    background: linear-gradient(135deg, var(--ion-color-primary) 0%, #7c4dff 100%);
     border-radius: 0 0 32px 32px;
     margin-bottom: 20px;
     overflow: hidden;
@@ -710,7 +701,7 @@ onIonViewWillEnter(() => {
 }
 
 .greeting-time {
-    color: rgba(247, 247, 247, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 16px;
 }
 
@@ -738,7 +729,7 @@ onIonViewWillEnter(() => {
 }
 
 .quote-text {
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 15px;
     font-style: italic;
     margin: 8px 0;
@@ -746,7 +737,7 @@ onIonViewWillEnter(() => {
 }
 
 .quote-author {
-    color: rgba(255, 255, 255, 0.979);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 12px;
 }
 
@@ -778,7 +769,7 @@ onIonViewWillEnter(() => {
 
 .ring-bg {
     fill: none;
-    stroke: #7e7d7d38;
+    stroke: #e0e0e0;
     stroke-width: 8;
 }
 
@@ -792,7 +783,7 @@ onIonViewWillEnter(() => {
 }
 
 .ring-progress.water {
-    stroke: #008cff;
+    stroke: #2196F3;
 }
 
 .ring-progress.workouts {
@@ -832,7 +823,6 @@ onIonViewWillEnter(() => {
 .section-container {
     padding: 0 16px;
     margin-bottom: 24px;
-    background-color: #01090f;
 }
 
 .section-title {
@@ -842,18 +832,14 @@ onIonViewWillEnter(() => {
     margin-bottom: 12px;
     font-size: 18px;
     font-weight: 700;
-    background-color:  #052e5a;
-    border: #040c13;
-    border-radius: 15px;
-  
 }
 
 /* Goal Card */
 .goal-card {
-    background: hsl(241, 82%, 18%);
+    background: white;
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 4px 20px hsl(241, 99%, 28%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .goal-header {
@@ -886,7 +872,7 @@ onIonViewWillEnter(() => {
 }
 
 .goal-percent {
-    color: #ffffff;
+    color: white;
     font-size: 14px;
     font-weight: 700;
 }
@@ -915,11 +901,11 @@ onIonViewWillEnter(() => {
 .week-summary {
     display: flex;
     justify-content: space-between;
-    background: #38618d;
+    background: white;
     border-radius: 16px;
     padding: 16px;
     margin-bottom: 12px;
-    
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .week-day {
@@ -971,10 +957,10 @@ onIonViewWillEnter(() => {
 .week-stats {
     display: flex;
     justify-content: space-around;
-    background: #38618d;
+    background: white;
     border-radius: 16px;
     padding: 16px;
-   
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .week-stat {
@@ -1007,12 +993,11 @@ onIonViewWillEnter(() => {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #38618d;
+    background: white;
     padding: 16px;
     border-radius: 16px;
     min-width: 180px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-    
 }
 
 .pr-medal {
@@ -1110,9 +1095,10 @@ onIonViewWillEnter(() => {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    background:  #38618d;
+    background: white;
     padding: 16px 8px;
     border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -1188,7 +1174,7 @@ onIonViewWillEnter(() => {
 }
 
 .achievement-desc {
-    color: rgba(168, 14, 14, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 14px;
 }
 
