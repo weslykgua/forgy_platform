@@ -1,20 +1,40 @@
 {
     "name": "forgy-platform",
     "version": "1.0.0",
-    "description": "Plataforma Forgy - App de Ejercicios",
+    "description": "Plataforma Forgy - App de Ejercicios con Prisma ORM",
     "scripts": {
-        "dev": "concurrently -n \"API,MOBILE,ADMIN\" -c \"yellow,cyan,magenta\" \"npm run dev:api\" \"npm run dev:mobile\" \"npm run dev:admin\"",
-        "dev:api": "cd forgy_backend_api && npx ts-node src/index.ts",
-        "dev:mobile": "cd forgy_mobile_app && ionic serve",
-        "dev:admin": "cd forgy_admin_web && npm run dev",
-        
-        "clean": "npx rimraf node_modules package-lock.json forgy_backend_api/node_modules forgy_backend_api/package-lock.json forgy_mobile_app/node_modules forgy_mobile_app/package-lock.json forgy_admin_web/node_modules forgy_admin_web/package-lock.json",
-        
+        "dev": "concurrently -n \"API,MOBILE\" -c \"yellow,cyan\" \"npm run dev:api\" \"npm run dev:mobile\"",
+        "dev:api": "cd forgy_backend_api && npm run dev",
+        "dev:mobile": "cd forgy_mobile_app && npm run dev",
+        "typecheck": "cd forgy_backend_api && npm run typecheck",
+        "typecheck:watch": "cd forgy_backend_api && npm run typecheck:watch",
+        "lint": "cd forgy_backend_api && npm run lint",
+        "lint:fix": "cd forgy_backend_api && npm run lint:fix",
+        "format": "cd forgy_backend_api && npm run format",
+        "format:check": "cd forgy_backend_api && npm run format:check",
+        "check": "cd forgy_backend_api && npm run check",
+        "db:start": "cd forgy_backend_api && docker-compose up postgres -d",
+        "db:stop": "cd forgy_backend_api && docker-compose down",
+        "db:studio": "cd forgy_backend_api && npx prisma studio",
+        "prisma:generate": "cd forgy_backend_api && npx prisma generate",
+        "prisma:migrate": "cd forgy_backend_api && npx prisma migrate dev",
+        "migrate:data": "cd forgy_backend_api && npm run migrate:data",
+        "clean": "npx rimraf node_modules package-lock.json forgy_backend_api/node_modules forgy_backend_api/package-lock.json forgy_backend_api/dist forgy_mobile_app/node_modules forgy_mobile_app/package-lock.json forgy_admin_web/node_modules forgy_admin_web/package-lock.json",
         "install:all": "npm install && concurrently \"cd forgy_backend_api && npm install\" \"cd forgy_mobile_app && npm install\" \"cd forgy_admin_web && npm install\"",
-        
+        "setup": "npm run install:all && npm run db:start && npm run prisma:generate && npm run prisma:migrate",
         "reset": "npm run clean && npm run install:all"
     },
     "devDependencies": {
-        "concurrently": "8.2.2"
+        "@types/node": "25.0.9",
+        "@typescript-eslint/eslint-plugin": "8.53.0",
+        "@typescript-eslint/parser": "8.53.0",
+        "concurrently": "8.2.2",
+        "eslint": "9.39.2",
+        "prettier": "3.8.0",
+        "rimraf": "5.0.5"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=9.0.0"
     }
 }
