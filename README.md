@@ -110,7 +110,6 @@ forgy-platform/
 ├── forgy_admin_web/       # Panel admin (Vue)
 ├── scripts/               # Scripts de automatización
 │   ├── start.js          # Script de inicio
-│   ├── first-time.js     # Setup primera vez
 │   └── wait-for-postgres.js
 └── package.json           # Scripts globales
 ```
