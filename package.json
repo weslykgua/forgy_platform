@@ -1,24 +1,20 @@
 {
   "name": "forgy-platform",
   "version": "1.0.0",
-  "description": "Plataforma Forgy - App de Ejercicios con Prisma ORM",
+  "description": "Plataforma Forgy - Monorepo",
   "scripts": {
-    "dev": "concurrently -n \"API,MOBILE\" -c \"blue,magenta\" \"npm run dev:api\" \"npm run dev:mobile\"",
+    "dev": "concurrently -n \"API,APP,ADM\" -c \"blue,magenta,green\" \"npm run dev:api --silent\" \"npm run dev:mobile --silent\" \"npm run dev:admin --silent\"",
     "start": "npm run dev",
-    
     "dev:api": "cd forgy_backend_api && npm run dev",
     "dev:mobile": "cd forgy_mobile_app && npm run dev",
-    
-    "// --- SETUP & INSTALL ---": "Comandos de inicialización",
+    "dev:admin": "cd forgy_admin_web && npm run dev",
+    "// SETUP": "Instala todo, levanta BD y migra",
     "setup": "npm install && npm run install:all && npm run db:init",
-    "install:all": "concurrently \"cd forgy_backend_api && npm install\" \"cd forgy_mobile_app && npm install\"",
-    
-    "// --- DATABASE OPS ---": "Operaciones de Base de Datos",
+    "install:all": "concurrently \"cd forgy_backend_api && npm install\" \"cd forgy_mobile_app && npm install\" \"cd forgy_admin_web && npm install\"",
+    "// DB": "Gestión de base de datos",
     "db:init": "cd forgy_backend_api && docker compose up -d && node -e \"setTimeout(() => console.log('✅ DB Lista'), 5000)\" && npx prisma migrate deploy && npx prisma generate",
     "db:stop": "cd forgy_backend_api && docker compose down",
-    "db:reset": "npm run db:stop && npm run db:init",
-    
-    "clean": "npx rimraf node_modules package-lock.json forgy_backend_api/node_modules forgy_backend_api/package-lock.json forgy_backend_api/dist forgy_mobile_app/node_modules forgy_mobile_app/package-lock.json"
+    "clean": "rimraf node_modules \"**/node_modules\" \"**/dist\" \"**/package-lock.json\""
   },
   "devDependencies": {
     "concurrently": "8.2.2",
