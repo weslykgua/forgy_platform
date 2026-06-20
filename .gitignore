@@ -1,4 +1,33 @@
-node_modules/
-.DS_Store
+# ======================
+# MONOREPO FORGY
+# ======================
+
+# Dependencies en cualquier subrepo
+**/node_modules/
+
+# Builds frontend/admin/mobile
+**/dist/
+**/www/
+
+# Capacitor (solo mobile app pero seguro global)
+**/android/
+**/ios/
+
+# Env files
 .env
-package-lock.json
+.env.*
+*.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Capacitor config outputs
+capacitor.config.*
